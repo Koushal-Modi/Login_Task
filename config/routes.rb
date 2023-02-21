@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+  get 'sessions/create'
+  get 'sessions/destroy'
   get 'user/create'
   get 'user/new'
   get 'user/index'
@@ -10,4 +13,8 @@ Rails.application.routes.draw do
   post '/users' => 'user#create'
   
   get '/' => 'user#index'
+
+get '/login' => 'sessions#new'
+post '/login' => 'sessions#create'
+get '/logout' => 'sessions#destroy'
 end
